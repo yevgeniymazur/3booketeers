@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Vite build output
+dist/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Mac system files
+.DS_Store
+
+# VSCode settings
+.vscode/
