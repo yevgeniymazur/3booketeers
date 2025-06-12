@@ -6,7 +6,7 @@ export default function Header() {
     <header className="header" role="banner">
       <div className="container header-content">
         <div className="logo" aria-label="Logo">
-          <img src="/images/logo.png" alt="3 Booketeers logo" />
+          <img src="images/logo.png" alt="3 Booketeers logo" />
           <span>The 3 Booketeers</span>
         </div>
         <nav className="nav" aria-label="Main navigation">
