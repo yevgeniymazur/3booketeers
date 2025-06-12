@@ -23,6 +23,7 @@ export default function App() {
           <Route path="/blog"     element={<Blog />}     />
           <Route path="/signin"   element={<SignIn />}   />
           <Route path="/signup"   element={<SignUp />}   />
+          <Route path="/signinorsignup"   element={<SignUpOrSignIn />}   />
 
           {/* catch-all: redirect anything else back to Home */}
           <Route path="*" element={<Navigate to="/" replace />} />
