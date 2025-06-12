@@ -9,6 +9,7 @@ import BookClub from './components/BookClub';
 import Blog     from './components/Blog';
 import SignIn   from './components/SignIn';
 import SignUp   from './components/SignUp';
+import SignInOrSignUp   from './components/SignInOrSignUp';
 
 export default function App() {
   return (
