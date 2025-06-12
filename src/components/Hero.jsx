@@ -5,7 +5,7 @@ export default function Hero() {
     <section
       className="hero"
       style={{
-        background: 'url(/images/fireplace.png) center/cover no-repeat',
+        background: 'url(images/fireplace.png) center/cover no-repeat',
         height: '60vh'
       }}
     />
