@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 import Header   from './components/Header';
 import Footer   from './components/Footer';
@@ -22,6 +22,9 @@ export default function App() {
           <Route path="/blog"     element={<Blog />}     />
           <Route path="/signin"   element={<SignIn />}   />
           <Route path="/signup"   element={<SignUp />}   />
+
+          {/* catch-all: redirect anything else back to Home */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
 
