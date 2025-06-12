@@ -4,26 +4,26 @@ import React from 'react';
 const rowOne = [
   {
     title: 'Build your own book club and connect with people from all over the world',
-    img: '/images/connect.png',     
+    img: 'images/connect.png',     
   },
   {
     title: 'User-made reviews and recommendations',
-    img: '/images/reviews.png',       
+    img: 'images/reviews.png',       
   },
 ];
 
 const rowTwo = [
   {
     title: 'Use forums to connect/discuss with other users',
-    img: '/images/forums.png',       
+    img: 'images/forums.png',       
   },
   {
     title: 'Recommended locations for clubs',
-    img: '/images/locations.png',  
+    img: 'images/locations.png',  
   },
   {
     title: 'Subscribe for notifications about new literary hits',
-    img: '/images/subscribe.png',    
+    img: 'images/subscribe.png',    
   },
 ];
 
