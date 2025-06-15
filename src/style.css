@@ -501,12 +501,11 @@ body {
 }
 
 .signin-container button {
-  width: 100%;
-  padding: 0.7rem;
-  background: #1976d2;
+  background: var(--clr-secondary);
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 20px; /* matches .btn-signup */
+  padding: 0.5rem 1rem;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
@@ -514,8 +513,10 @@ body {
   transition: background 0.2s;
 }
 
+
+/* signin container*/
 .signin-container button:hover {
-  background: #1565c0;
+  background: #a3471c; /* a darker shade for hover */
 }
 
 .signin-container .error {

@@ -11,6 +11,7 @@ import Blog     from './components/Blog';
 import SignIn   from './components/SignIn';
 import SignUp   from './components/SignUp';
 
+
 export default function App() {
   console.log("App component rendered");
   return (
@@ -24,7 +25,7 @@ export default function App() {
           <Route path="/blog"     element={<Blog />}     />
           <Route path="/signin"   element={<SignIn />}   />
           <Route path="/signup"   element={<SignUp />}   />
-         
+
 
           {/* catch-all: redirect anything else back to Home */}
           <Route path="*" element={<Navigate to="/" replace />} />
