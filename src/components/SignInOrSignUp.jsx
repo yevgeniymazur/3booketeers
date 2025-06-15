@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function AuthToggle() {
+function SignInOrSignUp() {
     const [isSignIn, setIsSignIn] = useState(true);
 
     const toggleForm = () => {
@@ -39,4 +39,4 @@ function LoginForm() {
     );
 }
 
-export default AuthToggle;
+export default SignInOrSignUp;

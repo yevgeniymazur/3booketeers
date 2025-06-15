@@ -5,7 +5,6 @@ import './App.css';
 
 import Header   from './components/Header';
 import Footer   from './components/Footer';
-
 import Home     from './components/Home';
 import BookClub from './components/BookClub';
 import Blog     from './components/Blog';
@@ -14,6 +13,7 @@ import SignUp   from './components/SignUp';
 import SignInOrSignUp   from './components/SignInOrSignUp';
 
 export default function App() {
+  console.log("App component rendered");
   return (
     <>
       <Header />
@@ -25,7 +25,7 @@ export default function App() {
           <Route path="/blog"     element={<Blog />}     />
           <Route path="/signin"   element={<SignIn />}   />
           <Route path="/signup"   element={<SignUp />}   />
-          <Route path="/signinorsignup"   element={<SignUpOrSignIn />}   />
+          <Route path="/signinorsignup" element={<SignInOrSignUp />} />
 
           {/* catch-all: redirect anything else back to Home */}
           <Route path="*" element={<Navigate to="/" replace />} />
