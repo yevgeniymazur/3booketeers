@@ -2,9 +2,10 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBdTM6mlx5jKVjs6aRGbL_S0zlgWmF4gFg",
-  authDomain: "booketeers-ec353.firebaseapp.com",
-  projectId: "booketeers-ec353",
+  apiKey: "AIzaSyDFflttj1FRwdl-8TvwwlCb4yZv9-Pt1xE",
+  authDomain: "booketeers-771a1.firebaseapp.com",
+  projectId: "booketeers-771a1",
+
 };
 
 const app = initializeApp(firebaseConfig);
