@@ -14,7 +14,6 @@ export default function Header() {
           <Link to="/bookclub">Book Club</Link>
           <Link to="/blog">Blog</Link>
           <Link to="/signin">Sign In</Link>
-          <Link to="/signinorsignup">Sign In Or Sign Up</Link>
           <Link to="/signup">
             <button className="btn-signup">Sign Up</button>
           </Link>
