@@ -1,23 +1,8 @@
-/*import React from 'react';
-
-export default function SignIn() {
-  return (
-    <main className="container">
-      <h1>Sign In</h1>
-      <form aria-label="Sign in form">
-        <label>Email<input type="email" required/></label>
-        <label>Password<input type="password" required/></label>
-        <button type="submit">Sign In</button>
-      </form>
-    </main>
-  );
-}*/
-
 import { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 
-function SignUp() {
+export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -26,21 +11,38 @@ function SignUp() {
     e.preventDefault();
     setError("");
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      // Optionally redirect or show success message
+      await signInWithEmailAndPassword(auth, email, password);
+      // Optionally redirect or show success message here
     } catch (err) {
       setError(err.message);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="email" value={email} onChange={e => setEmail(e.target.value)} required />
-      <input type="password" value={password} onChange={e => setPassword(e.target.value)} required />
-      <button type="submit">Sign Up</button>
-      {error && <div>{error}</div>}
-    </form>
+    <main className="signin-container">
+      <h1>Sign In</h1>
+      <form aria-label="Sign in form" onSubmit={handleSubmit}>
+        <label>
+          Email
+          <input
+            type="email"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            required
+          />
+        </label>
+        <label>
+          Password
+          <input
+            type="password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            required
+          />
+        </label>
+        <button type="submit">Sign In</button>
+        {error && <div className="error">{error}</div>}
+      </form>
+    </main>
   );
 }
-
-export default SignUp;
