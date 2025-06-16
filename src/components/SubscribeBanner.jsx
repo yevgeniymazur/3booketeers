@@ -20,7 +20,7 @@ export default function SubscribeBanner() {
       <div className="image">
         <img
   src="images/raffle.gif"
-  alt="Stack of books with raffle ticket"
+  alt="Stack of books with raffle ticke"
   className="subscribe-gif"
 />
       </div>
