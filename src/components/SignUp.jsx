@@ -1,47 +1,39 @@
-/*import React from 'react';
-
-export default function SignUp() {
-  return (
-    <main className="container">
-      <h1>Sign Up</h1>
-      <form aria-label="Sign up form">
-        <label>Name<input type="text" required/></label>
-        <label>Email<input type="email" required/></label>
-        <label>Password<input type="password" required/></label>
-        <button type="submit">Create Account</button>
-      </form>
-    </main>
-  );
-}*/
+// src/components/SignUp.jsx
 
 import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 
 export default function SignUp() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
-    setSuccess("");
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      setSuccess("Account created! You can now sign in.");
-      setEmail("");
-      setPassword("");
+      // Optionally update profile with name or redirect here
     } catch (err) {
       setError(err.message);
     }
   };
 
   return (
-    <main className="container">
+    <main className="container auth-container">
       <h1>Sign Up</h1>
       <form aria-label="Sign up form" onSubmit={handleSubmit}>
+        <label>
+          Name
+          <input
+            type="text"
+            value={name}
+            onChange={e => setName(e.target.value)}
+            required
+          />
+        </label>
         <label>
           Email
           <input
@@ -60,9 +52,8 @@ export default function SignUp() {
             required
           />
         </label>
-        <button type="submit">Sign Up</button>
-        {error && <div style={{ color: "red" }}>{error}</div>}
-        {success && <div style={{ color: "green" }}>{success}</div>}
+        <button type="submit">Create Account</button>
+        {error && <div className="error">{error}</div>}
       </form>
     </main>
   );

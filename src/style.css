@@ -446,14 +446,13 @@ body {
   background: rgba(210, 180, 140, 0.8) !important;
 }
 :root {
-  /* add an RGB var for your primary tan */
   --clr-primary-rgb: 254, 217, 165;
 }
 
-/* make the overlays match header/footer color, but translucent */
+
 .card .overlay {
   background-color: rgba(var(--clr-primary-rgb), 0.7) !important;
-  /* keep your existing padding/text styles */
+
 }
 
 :root {
@@ -523,4 +522,217 @@ body {
   color: #d32f2f;
   margin-top: 1rem;
   text-align: center;
+}
+/* === Auth Forms (Sign In / Sign Up) === */
+.auth-container {
+  max-width: 400px;
+  margin: 3rem auto;
+  padding: 2rem;
+   background: #fed9a5; 
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container h1 {
+  font-size: var(--fs-lg);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--clr-secondary);
+}
+
+.auth-container label {
+  display: block;
+  margin-bottom: 1.25rem;
+  font-weight: 500;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: var(--fs-sm);
+}
+
+.auth-container button {
+  display: block;
+  width: 100%;
+  background: var(--clr-secondary);
+  color: #fff;
+  border: none;
+  padding: 0.75rem;
+  font-size: var(--fs-md);
+  font-weight: bold;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.2s ease;
+}
+
+.auth-container button:hover {
+  background: #a3471c;
+}
+
+.auth-container .error {
+  color: #d32f2f;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: var(--fs-sm);
+}
+.subscribe-banner.container {
+  width: 60%;
+  margin: 2rem 0 2rem auto;
+}
+
+.subscribe-banner .text form button {
+  margin-left: 1rem;
+}
+
+.subscribe-banner {
+  background: var(--clr-bg-secondary);    
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  margin: 2rem auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.subscribe-banner h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.subscribe-form {
+  margin-top: 1rem;
+  display: inline-flex;
+  gap: 1rem; /* space between input & button */
+}
+
+.subscribe-form input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.subscribe-form button {
+  padding: 0.5rem 1rem;
+  background: var(--clr-secondary);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.subscribe-gif {
+  width: 50px;    /* pick your ideal max width */
+  max-width: 50%; /* so it can shrink on small screens */
+  height: auto;    /* preserve ratio */
+  margin-top: 1rem;
+}
+/* ---- BookClub Page ---- */
+
+.bookclub-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: rgba(241, 206, 159, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.bookclub-container h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.club-form {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.club-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.club-form input,
+.club-form textarea {
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.club-form .btn-signup {
+  justify-self: start;
+  background: var(--clr-secondary);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.club-form .btn-signup:hover {
+  background: #a3471c;
+}
+
+/* the list of cards */
+.club-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.club-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+.club-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.club-card p {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+}
+
+.btn-delete {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: #d32f2f;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+/* ---- Footer stick to bottom ---- */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }

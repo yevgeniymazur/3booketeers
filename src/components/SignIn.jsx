@@ -1,3 +1,5 @@
+// src/components/SignIn.jsx
+
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
@@ -19,7 +21,7 @@ export default function SignIn() {
   };
 
   return (
-    <main className="signin-container">
+    <main className="container auth-container">
       <h1>Sign In</h1>
       <form aria-label="Sign in form" onSubmit={handleSubmit}>
         <label>

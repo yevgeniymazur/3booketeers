@@ -3,12 +3,26 @@ import React from 'react';
 
 export default function SubscribeBanner() {
   return (
-    <section className="subscribe-banner container two-col">
+    <section className="subscribe-banner container">
       <div className="text">
-        <h3>Subscribe for notifications about new literary hits</h3>
+        <h2>Free book raffle: submit your email to enter!</h2>
+        <form aria-label="Book raffle form">
+          <input
+            type="email"
+            placeholder="Your email address"
+            required
+          />
+          <button type="submit" className="btn-signup">
+            Enter to Win
+          </button>
+        </form>
       </div>
       <div className="image">
-        <img src="/images/subscribe.jpg" alt="Reading books" />
+        <img
+  src="images/raffle.gif"
+  alt="Stack of books with raffle ticket"
+  className="subscribe-gif"
+/>
       </div>
     </section>
   );
