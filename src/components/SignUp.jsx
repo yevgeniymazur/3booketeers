@@ -1,21 +1,32 @@
 // src/components/SignUp.jsx
 
 import { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../firebase";
+import { useNavigate } from "react-router-dom";
 
 export default function SignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+    setSuccess("");
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      // Optionally update profile with name or redirect here
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      // Optionally update the user's display name
+      if (name) {
+        await updateProfile(userCredential.user, { displayName: name });
+      }
+      setSuccess("Sign up successful! Redirecting...");
+      setTimeout(() => {
+        navigate("/");
+      }, 1500); // Redirect after 1.5 seconds
     } catch (err) {
       setError(err.message);
     }
@@ -54,6 +65,7 @@ export default function SignUp() {
         </label>
         <button type="submit">Create Account</button>
         {error && <div className="error">{error}</div>}
+        {success && <div className="success" style={{ color: "green", marginTop: "1rem" }}>{success}</div>}
       </form>
     </main>
   );
