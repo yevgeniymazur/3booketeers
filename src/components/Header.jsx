@@ -13,6 +13,7 @@ export default function Header() {
           <Link to="/">Home</Link>
           <Link to="/bookclub">Book Club</Link>
           <Link to="/blog">Blog</Link>
+          <Link to="/search">Book Search</Link> {/* <-- Add this line */}
           <Link to="/signin">Sign In</Link>
           <Link to="/signup">
             <button className="btn-signup">Sign Up</button>
