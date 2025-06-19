@@ -10,23 +10,31 @@ import BookClub   from './components/BookClub';
 import Blog       from './components/Blog';
 import SignIn     from './components/SignIn';
 import SignUp     from './components/SignUp';
-import BookSearch from './components/BookSearch';
-import { AuthProvider } from './context/AuthContext'; // <-- Import AuthProvider
+import BookSearch from './components/BookSearch'; // <-- Add this import
+import ProtectedRoute from './components/ProtectedRoute';
 
 export default function App() {
   console.log("App component rendered");
   return (
-    <AuthProvider> {/* <-- Wrap your app here */}
+    <>
       <Header />
 
       <main>
         <Routes>
-          <Route path="/"         element={<Home />}       />
-          <Route path="/bookclub" element={<BookClub />}   />
-          <Route path="/blog"     element={<Blog />}       />
+          <Route path="/" element={<Home />}       />
+          <Route path="/bookclub" element={
+            <ProtectedRoute>
+              <BookClub />
+            </ProtectedRoute>
+          } />
+          <Route path="/blog" element={
+            <ProtectedRoute>
+              <Blog />
+            </ProtectedRoute>
+          } />
           <Route path="/signin"   element={<SignIn />}     />
           <Route path="/signup"   element={<SignUp />}     />
-          <Route path="/search"   element={<BookSearch />} />
+          <Route path="/search"   element={<BookSearch />} /> {/* <-- Add this route */}
 
           {/* catch-all: redirect anything else back to Home */}
           <Route path="*" element={<Navigate to="/" replace />} />
@@ -34,6 +42,6 @@ export default function App() {
       </main>
 
       <Footer />
-    </AuthProvider>
+    </>
   );
 }
