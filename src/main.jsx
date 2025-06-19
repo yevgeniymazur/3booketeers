@@ -6,11 +6,14 @@ import App from './App';
 
 import './style.css';      
 
+import { AuthProvider } from './context/AuthContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <HashRouter>
-      <App />
-    </HashRouter>
+    <AuthProvider>
+      <HashRouter>
+        <App />
+      </HashRouter>
+    </AuthProvider>
   </React.StrictMode>
 );
