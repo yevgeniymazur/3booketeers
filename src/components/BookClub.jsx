@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useAuth } from '../context/AuthContext';
 
 export default function BookClub() {
+  const { user } = useAuth();
   // form state
   const [name, setName] = useState('');
   const [location, setLocation] = useState('');
@@ -14,12 +16,12 @@ export default function BookClub() {
     if (!name) return; // require at least a name
     setClubs([
       ...clubs,
-      { id: Date.now(), name, location, books, comment }
+      { id: Date.now(), name, location, books, comment, owner: user?.uid }
     ]);
     // clear form
     setName('');
     setLocation('');
-    setBooks('');
+    setBooks('')
     setComment('');
   };
 
@@ -78,13 +80,23 @@ export default function BookClub() {
       <section className="club-list">
         {clubs.map(c => (
           <div key={c.id} className="club-card">
-            <h3>{c.name}</h3>
+                        <h3>
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(c.location)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {c.name}
+              </a>
+            </h3>
             {c.location && <p><strong>Location:</strong> {c.location}</p>}
             {c.books && <p><strong>Books:</strong> {c.books}</p>}
             {c.comment && <p><em>"{c.comment}"</em></p>}
-            <button onClick={() => handleDelete(c.id)} className="btn-delete">
-              Remove
-            </button>
+            {c.owner === user?.uid && (
+              <button onClick={() => handleDelete(c.id)} className="btn-delete">
+                Remove
+              </button>
+            )}
           </div>
         ))}
       </section>
