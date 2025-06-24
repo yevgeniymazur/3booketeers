@@ -721,7 +721,7 @@ body {
   cursor: pointer;
 }
 
-/* ---- Footer stick to bottom ---- */
+
 html, body {
   height: 100%;
   margin: 0;
@@ -736,3 +736,141 @@ html, body {
 main {
   flex: 1;
 }
+
+.disabled-link-wrapper {
+  display: inline-block;
+  position: relative;
+  margin: 0;              
+}
+
+.disabled-link {
+  pointer-events: none;
+  cursor: not-allowed;
+  text-decoration: none;
+  color: inherit;        
+  margin: 0;
+  padding: 0;
+}
+
+.disabled-link,
+.nav a {
+  margin: 0 0.75rem;
+}
+
+.tooltip {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 6px 10px;
+  border-radius: 4px;
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 100;
+  font-size: 0.85rem;
+}
+
+.disabled-link-wrapper:hover .tooltip {
+  visibility: visible;
+}
+
+.blog-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.blog-post {
+  background-color: #fcecd4; /* light parchment-style tone */
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post h2 {
+  margin-bottom: 0.5rem;
+  color: #442c1e;
+}
+
+.blog-post p {
+  margin: 0.5rem 0;
+}
+
+.comment-form {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.blog-wrapper {
+  background-color: #fdd9a0; 
+  padding: 2rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+.blog-wrapper {
+  margin-bottom: 4rem;
+}
+
+.blog-post {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.blog-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+  margin: 2rem 0;
+  padding: 3.5rem;
+  background-color: #fdd8a2; 
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.blog-form input,
+.blog-form textarea {
+  padding: 0.5rem;
+  border: 4px solid #ccc;
+  border-radius: 16px;
+  font-family: inherit;
+  width: 200px;
+}
+
+.blog-form textarea {
+  resize: vertical;
+  height: 80px;
+}
+
+.blog-form .btn-signup {
+  align-self: center;
+  padding: .6rem 1.2rem;
+  border-radius: 999px;
+  border: none;
+  background-color: #c65228;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.blog-form .btn-signup:hover {
+  background-color: #a74220;
+}
+
+
