@@ -2,7 +2,7 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-import './App.css'
+import './App.css';
 
 import Header     from './components/Header';
 import Footer     from './components/Footer';
@@ -14,9 +14,11 @@ import SignUp     from './components/SignUp';
 import BookSearch from './components/BookSearch';
 
 export default function App() {
+  console.log("App component rendered");
   return (
     <>
       <Header />
+
       <main>
         <Routes>
           <Route path="/"           element={<Home />}       />
@@ -29,8 +31,8 @@ export default function App() {
           <Route path="*"           element={<Navigate to="/" replace />} />
         </Routes>
       </main>
+
       <Footer />
     </>
-  )
+  );
 }
-
