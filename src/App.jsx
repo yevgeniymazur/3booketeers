@@ -1,16 +1,17 @@
-import React from 'react'
-import { Routes, Route, Navigate } from 'react-router-dom'
+// src/App.jsx
+import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 import './App.css'
 
-import Header     from './components/Header'
-import Footer     from './components/Footer'
-import Home       from './components/Home'
-import BookClub   from './components/BookClub'
-import Blog       from './components/Blog'
-import SignIn     from './components/SignIn'
-import SignUp     from './components/SignUp'
-import BookSearch from './components/BookSearch'
+import Header     from './components/Header';
+import Footer     from './components/Footer';
+import Home       from './components/Home';
+import BookClub   from './components/BookClub';
+import Blog       from './components/Blog';
+import SignIn     from './components/SignIn';
+import SignUp     from './components/SignUp';
+import BookSearch from './components/BookSearch';
 
 export default function App() {
   return (
@@ -18,13 +19,14 @@ export default function App() {
       <Header />
       <main>
         <Routes>
-          <Route path="/"         element={<Home />}       />
-          <Route path="/bookclub" element={<BookClub />}   />
-          <Route path="/blog"     element={<Blog />}       />
-          <Route path="/search"   element={<BookSearch />} />
-          <Route path="/signin"   element={<SignIn />}     />
-          <Route path="/signup"   element={<SignUp />}     />
-          <Route path="*"         element={<Navigate to="/" replace />} />
+          <Route path="/"           element={<Home />}       />
+          <Route path="/bookclub"   element={<BookClub />}   />
+          <Route path="/blog"       element={<Blog />}       />
+          <Route path="/search"     element={<BookSearch />} />
+          <Route path="/signin"     element={<SignIn />}     />
+          <Route path="/signup"     element={<SignUp />}     />
+          {/* catch-all: redirect anything else back to Home */}
+          <Route path="*"           element={<Navigate to="/" replace />} />
         </Routes>
       </main>
       <Footer />
