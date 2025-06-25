@@ -23,16 +23,8 @@ export default function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/bookclub" element={
-            <ProtectedRoute>
-              <BookClub />
-            </ProtectedRoute>
-          } />
-          <Route path="/blog" element={
-            <ProtectedRoute>
-              <Blog />
-            </ProtectedRoute>
-          } />
+          <Route path="/bookclub" element={<BookClub />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/search"   element={<BookSearch />} /> {/* <-- Add this route */}
