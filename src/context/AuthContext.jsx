@@ -13,16 +13,21 @@ export function useAuth() {
 // Provider component
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true); // loading state
 
   useEffect(() => {
-    // Listen for auth state changes
-    const unsubscribe = onAuthStateChanged(auth, setUser);
-    return unsubscribe; // Cleanup subscription on unmount
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+      setUser(firebaseUser);
+      setLoading(false); // done checking auth
+    });
+
+    return unsubscribe;
   }, []);
 
+  // Wait for auth to finish loading before rendering the app
   return (
     <AuthContext.Provider value={{ user }}>
-      {children}
+      {!loading ? children : <div>Loading...</div>}
     </AuthContext.Provider>
   );
 }
