@@ -13,7 +13,6 @@ import SignIn     from './components/SignIn';
 import SignUp     from './components/SignUp';
 import BookSearch from './components/BookSearch'; // <-- Add this import
 import ProtectedRoute from './components/ProtectedRoute';
-import BookSearch from './components/BookSearch';
 
 export default function App() {
   console.log("App component rendered");
@@ -23,7 +22,7 @@ export default function App() {
 
       <main>
         <Routes>
-          <Route path="/" element={<Home />}       />
+          <Route path="/" element={<Home />} />
           <Route path="/bookclub" element={
             <ProtectedRoute>
               <BookClub />
@@ -34,18 +33,12 @@ export default function App() {
               <Blog />
             </ProtectedRoute>
           } />
-          <Route path="/signin"   element={<SignIn />}     />
-          <Route path="/signup"   element={<SignUp />}     />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route path="/search"   element={<BookSearch />} /> {/* <-- Add this route */}
 
-          <Route path="/"           element={<Home />}       />
-          <Route path="/bookclub"   element={<BookClub />}   />
-          <Route path="/blog"       element={<Blog />}       />
-          <Route path="/search"     element={<BookSearch />} />
-          <Route path="/signin"     element={<SignIn />}     />
-          <Route path="/signup"     element={<SignUp />}     />
           {/* catch-all: redirect anything else back to Home */}
-          <Route path="*"           element={<Navigate to="/" replace />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
 
