@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { Navigate } from 'react-router-dom';
 
 export default function BookClub() {
   const { user } = useAuth();
+  if (!user) {
+    return <Navigate to="/signin" replace />;
+  }
   // form state
   const [name, setName] = useState('');
   const [location, setLocation] = useState('');
