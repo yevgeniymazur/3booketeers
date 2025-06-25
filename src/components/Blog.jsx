@@ -51,10 +51,14 @@ const initialPosts = [
 ]
 
 export default function Blog() {
-  const { currentUser } = useAuth()
+  const { user: currentUser, loading } = useAuth();
+
+  if (loading) {
+    return <div>Loading...</div>;
+ }
 
   if (!currentUser) {
-    return <Navigate to="/signin" replace />
+    return <Navigate to="/signin" replace />;
   }
 
   const [posts, setPosts] = useState(initialPosts)
