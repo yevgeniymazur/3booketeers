@@ -1,26 +1,34 @@
 # 📚 3Booketeers
 
-3Booketeers is a collaborative book club web app that allows users to create, manage, and view real-time book club meetings. Built using React, Firestore, and the Google Geocoding API, the app focuses on simple functionality, ownership-based access, and real-time updates.
+**3Booketeers** is a collaborative web application designed to bring book lovers together. Users can create and join Book Clubs, leave book reviews, and get personalized book recommendations. The platform also integrates with the **Google Books API** to fetch book data and previews, and features an optional Book Store where users can explore purchasing options via affiliate links.
+
+This app is built using **React** with **Firestore** as the database and integrates APIs such as **Google Books** and **Google Geocoding** to provide dynamic and location-aware features.
 
 ---
 
-## ✨ Features
+## 🔧 Core Features
 
-- 🔐 Create and manage Book Club meetings
-- ✅ Only the creator of a meeting can delete it
-- 🧭 Location support using Google Geocoding API
-- 🔄 Real-time updates via Firestore listeners
-- 🧼 Clean, component-based React code structure
-
----
-
-## 🛠️ Tech Stack
-
-- **Frontend**: React (with Vite)
-- **Database**: Firebase Firestore (NoSQL)
-- **APIs**: Google Geocoding API
+- 👥 **User Authentication** (Login / Signup)
+- 📅 **Create & Join Book Clubs**
+- ✍️ **Leave & View Book Reviews**
+- 📚 **Book Recommendations**
+- 🛍️ **Integrated Book Store** with purchase/preview links
+- 💬 **Threaded Comment System** with replies
+- 🛠️ **Edit/Delete Posts** (CRUD)
+- 🌍 **Geo-aware Book Club Search** *(planned)*
+- 📖 **Book Preview Fetching via Google Books API**
 
 ---
+
+## 🛠️ Technologies Used
+
+- **React** – Component-based frontend
+- **React Router** – Navigation and routing
+- **Firebase Firestore** – Real-time database
+- **Google Books API** – Book data, previews, covers
+- **Google Geocoding API** – Location processing
+- **Context API** – Global state management
+- **CSS Flex/Grid** – Responsive mobile-first layout
 
 ## ⚙️ Setup Instructions
 
