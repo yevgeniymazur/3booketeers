@@ -1,4 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { db } from '../firebase';
+import {
+  collection,
+  getDocs,
+  addDoc,
+  deleteDoc,
+  doc,
+  serverTimestamp
+} from 'firebase/firestore';
 import { useAuth } from '../context/AuthContext';
 import { Navigate } from 'react-router-dom';
 
@@ -15,23 +24,41 @@ export default function BookClub() {
   // list of clubs
   const [clubs, setClubs] = useState([]);
 
-  const handleAdd = (e) => {
+  const handleAdd = async (e) => {
     e.preventDefault();
-    if (!name) return; // require at least a name
-    setClubs([
-      ...clubs,
-      { id: Date.now(), name, location, books, comment, owner: user?.uid }
-    ]);
-    // clear form
+    if (!name) return;
+
+    const newClub = {
+      name,
+      location,
+      books,
+      comment,
+      owner: user.uid,
+      createdAt: serverTimestamp()
+    };
+
+    const docRef = await addDoc(collection(db, 'bookclubs'), newClub);
+    setClubs([...clubs, { id: docRef.id, ...newClub }]);
+
     setName('');
     setLocation('');
-    setBooks('')
+    setBooks('');
     setComment('');
   };
 
-  const handleDelete = (id) => {
+  const handleDelete = async (id) => {
+    await deleteDoc(doc(db, 'bookclubs', id));
     setClubs(clubs.filter(c => c.id !== id));
   };
+
+  useEffect(() => {
+    const fetchClubs = async () => {
+      const snapshot = await getDocs(collection(db, 'bookclubs'));
+      setClubs(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
+    };
+
+    fetchClubs();
+  }, []);
 
   return (
     <main className="bookclub-container">
