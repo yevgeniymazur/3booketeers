@@ -5,7 +5,6 @@
 This app is built using **React** with **Firestore** as the database and integrates APIs such as **Google Books** and **Google Geocoding** to provide dynamic and location-aware features.
 
 ---
-
 ## 🔧 Core Features
 
 - 👥 **User Authentication** (Login / Signup)
@@ -17,8 +16,6 @@ This app is built using **React** with **Firestore** as the database and integra
 - 🛠️ **Edit/Delete Posts** (CRUD)
 - 🌍 **Geo-aware Book Club Search** *(planned)*
 - 📖 **Book Preview Fetching via Google Books API**
-
----
 
 ## 🛠️ Technologies Used
 
@@ -70,7 +67,6 @@ npm install
    npm run dev
    ```
    The app will be accessible at http://localhost:5173.
-
 ---
 
 ## 🧪 API Documentation
@@ -85,7 +81,6 @@ npm install
   - `date` *(timestamp)*
   - `location` *(string – converted to lat/lng)*
   - `userId` *(creator’s ID)*
-
 ---
 
 ### 🔸 Delete Book Club
@@ -93,7 +88,6 @@ npm install
 - **File**: `src/components/BookClub.jsx`
 - **Function**: Deletes a document from Firestore **only if** the current user is the creator.
 - **Logic**: Matches `userId` of meeting with `currentUser.uid`
-
 ---
 
 ### 🔸 Geocoding API Integration
@@ -102,7 +96,6 @@ npm install
 - **File**: `src/components/BookClub.jsx`
 - **API Used**: Google Maps Geocoding API
 - **Usage**: Called during Book Club creation when a location is submitted in the form
-
 ---
 
 ### 🔸 Google Books API Integration
