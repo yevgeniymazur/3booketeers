@@ -69,7 +69,7 @@ npm install
 
 ### 🔸 Create Book Club
 
-- **File**: `src/components/CreateMeeting.jsx`
+- **File**: `src/components/BookClub.jsx`
 - **Function**: Adds a new document to Firestore in the `bookclubs` collection.
 - **Fields Required**:
   - `title` *(string)*
@@ -82,7 +82,7 @@ npm install
 
 ### 🔸 Delete Book Club
 
-- **File**: `src/components/BookClubCard.jsx`
+- **File**: `src/components/BookClub.jsx`
 - **Function**: Deletes a document from Firestore **only if** the current user is the creator.
 - **Logic**: Matches `userId` of meeting with `currentUser.uid`
 
@@ -91,7 +91,7 @@ npm install
 ### 🔸 Geocoding API Integration
 
 - **Purpose**: Converts user-entered location into latitude and longitude
-- **File**: `src/utils/geocode.js` *(or similar helper)*
+- **File**: `src/components/BookClub.jsx`
 - **API Used**: Google Maps Geocoding API
 - **Usage**: Called during Book Club creation when a location is submitted in the form
 
@@ -100,7 +100,7 @@ npm install
 ### 🔸 Google Books API Integration
 
 - **Purpose**: Fetches book information such as title, author, and thumbnail image
-- **File**: `src/components/BookSearch.jsx` *(or related component)*
+- **File**: `src/components/BookSearch.jsx`
 - **API Used**: Google Books API  
 - **Usage**: When users search for a book title, we call the Google Books API to retrieve relevant book results and display them in the UI.
 
