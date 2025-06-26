@@ -67,8 +67,6 @@ npm install
 
 ## 🧪 API Documentation
 
----
-
 ### 🔸 Create Book Club
 
 - **File**: `src/components/CreateMeeting.jsx`
